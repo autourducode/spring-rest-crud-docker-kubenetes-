@@ -14,6 +14,8 @@
 	<name>demo-crud</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
+		<docker.image.prefix>mydocker</docker.image.prefix>
+		<docker.image.name>api</docker.image.name>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
@@ -57,7 +59,16 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<!--<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.9</version>
+				<configuration>
+					<repository>${docker.image.prefix}/${docker.image.name}</repository>
+				</configuration>
+			</plugin>-->
 		</plugins>
+		<finalName>api</finalName>
 	</build>
 
 </project>
